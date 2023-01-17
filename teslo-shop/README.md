@@ -25,4 +25,17 @@ http://localhost:3000/api/seed
 
 # Production notes:
 
+Ejecutar este comando
+```
+docker compose -f docker-compose.prod.yml build
+```
 
+Para subir la imagen a docker hub
+```
+docker buildx build --platform linux/amd64,linux/arm64 -t mike777king/teslo-shop:1.1.0 --push .
+```
+
+Para subir la imagen a digital ocean
+```
+docker buildx build --platform linux/amd64,linux/arm64 -t registry.digitalocean.com/teslo-registry/teslo-shop:1.1.0 --push .
+```
